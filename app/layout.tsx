@@ -30,7 +30,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning className="white">
 			<head />
 			<body
 				className={clsx(
@@ -38,7 +38,7 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+				<Providers themeProps={{ attribute: "class", defaultTheme: "white" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
 						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
@@ -51,8 +51,8 @@ export default function RootLayout({
 								href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
 								title="nextui.org homepage"
 							>
-								<span className="text-default-600">Powered by</span>
-								<p className="text-primary">NextUI</p>
+								<span className="text-default-600">Built by</span>
+								<p className="text-primary">Caceres</p>
 							</Link>
 						</footer>
 					</div>
