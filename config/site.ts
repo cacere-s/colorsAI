@@ -5,32 +5,22 @@ export const siteConfig = {
 	description: "Color palette generator for UI with AI",
 	navItems: [
 		{
-			label: "Home",
+			label: "Create",
 			href: "/",
 		},
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Palettes",
+      href: "/palettes",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Colors",
+      href: "/colors",
     },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    }
 	],
 
 	links: {
-		github: "https://github.com/nextui-org/nextui",
-		twitter: "https://twitter.com/getnextui",
-		docs: "https://nextui.org",
-		discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev"
+		github: "https://github.com/cacere-s/colorsAI",
+		twitter: "https://twitter.com/cacere__s",
+		docs: "https://nextui.org"
 	},
 };

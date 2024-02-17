@@ -1,9 +1,9 @@
 import { title } from "@/components/primitives";
 
-export default function BlogPage() {
+export default function PalettesPage() {
 	return (
 		<div>
-			<h1 className={title()}>Blog</h1>
+			<h1 className={title()}>Palettes</h1>
 		</div>
 	);
 }
