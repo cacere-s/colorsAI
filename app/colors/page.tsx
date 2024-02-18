@@ -17,24 +17,27 @@ export default function ColorsPage() {
 			<section className="mt-8">
 				{colors.map((palette, index) => (
 					<div key={`${palette.paletteName}-${index}`}>
-						<p className={subtitle({ class: "text-start mb-2 uppercase font-semibold" })}>
+						<p
+							className={subtitle({
+								class: "text-start mb-2 uppercase font-semibold",
+							})}
+						>
 							{palette.paletteName}
 						</p>
-						<section className="grid grid-cols-9 gap-x-1">
+						<section className="grid grid-cols-11 gap-x-2">
 							{palette.swatches.map((swatch, index) => (
-
-									<div key={`${swatch.name}-${index}`} className="mb-4 hidden md:grid text-start">
-										
-										<div
-											className="h-20 w-20 rounded-xl"
-											style={{ backgroundColor: swatch.color }}
-										/>
-										<p>{swatch.name}</p>
-										<p className="uppercase text-sm">{swatch.color}</p>
-									</div>
-
-								)
-							)}
+								<div
+									key={`${swatch.name}-${index}`}
+									className="mb-6 hidden md:grid text-start"
+								>
+									<div
+										className="h-16 w-16 rounded-xl"
+										style={{ backgroundColor: swatch.color }}
+									/>
+									<p>{swatch.name}</p>
+									<p className="uppercase text-sm">{swatch.color}</p>
+								</div>
+							))}
 						</section>
 					</div>
 				))}

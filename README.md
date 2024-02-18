@@ -1,4 +1,4 @@
-# Colors IA
+# Colors AI
 
 Color palette generator for UI with AI
 

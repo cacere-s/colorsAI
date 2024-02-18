@@ -25,7 +25,7 @@ import { usePathname } from "next/navigation";
 export const Navbar = () => {
 	const pathName = usePathname();
 	return (
-		<NextUINavbar maxWidth="xl" position="sticky" className="w-full">
+		<NextUINavbar maxWidth="xl" position="sticky">
 			<NavbarContent className="basis-1/5 sm:basis-full">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
 					<NextLink className="flex justify-start items-center gap-2" href="/">
