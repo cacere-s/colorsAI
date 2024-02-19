@@ -3,7 +3,7 @@ import { colors } from "./colors";
 
 export default function ColorsPage() {
 	return (
-		<main className="flex flex-col items-center justify-center gap-4">
+		<main className="flex flex-col items-center justify-center">
 			<div className="inline-block max-w-lg text-center justify-center">
 				<h1 className={title()}>Tailwind&nbsp;</h1>
 				<h1 className={title({ color: "blue" })}>CSS&nbsp;</h1>
@@ -14,28 +14,33 @@ export default function ColorsPage() {
 				</h3>
 			</div>
 
-			<section className="mt-8">
+			<section className="mt-8 w-full">
 				{colors.map((palette, index) => (
 					<div key={`${palette.paletteName}-${index}`}>
 						<p
 							className={subtitle({
-								class: "text-start mb-2 uppercase font-semibold",
+								class: "text-center md:text-start mb-2 uppercase font-semibold",
 							})}
 						>
 							{palette.paletteName}
 						</p>
-						<section className="grid grid-cols-11 gap-x-2">
+
+						<section className="w-full grid grid-cols-1 md:grid-cols-11 gap-x-2 mb-6">
 							{palette.swatches.map((swatch, index) => (
-								<div
-									key={`${swatch.name}-${index}`}
-									className="mb-6 hidden md:grid text-start"
-								>
+								<div key={`${swatch.name}-${index}`}>
 									<div
-										className="h-16 w-16 rounded-xl"
+										className="hidden md:grid h-14 rounded-xl"
 										style={{ backgroundColor: swatch.color }}
 									/>
-									<p>{swatch.name}</p>
-									<p className="uppercase text-sm">{swatch.color}</p>
+									<div
+										className="grid md:hidden h-10 rounded-xl"
+										style={{ backgroundColor: swatch.color }}
+									/>
+
+									<div className="flex justify-between mb-1 md:flex-col md:text-start">
+										<p>{swatch.name}</p>
+										<p className="uppercase text-sm">{swatch.color}</p>
+									</div>
 								</div>
 							))}
 						</section>

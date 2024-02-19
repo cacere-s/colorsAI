@@ -1,11 +1,12 @@
-import "@/styles/globals.css";
-import { Metadata } from "next";
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
+import { fontSans } from "@/config/fonts";
+import { siteConfig } from "@/config/site";
+import "@/styles/globals.css";
 import { Link } from "@nextui-org/link";
+import { Divider } from "@nextui-org/react";
 import clsx from "clsx";
+import { Metadata } from "next";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
 	title: {
@@ -35,7 +36,7 @@ export default function RootLayout({
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable
+					fontSans.variable,
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "white" }}>
@@ -44,14 +45,19 @@ export default function RootLayout({
 						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
 							{children}
 						</main>
-						<footer className="w-full flex items-center justify-center py-3">
+						<Divider className="my-4" />
+						<footer className="w-full flex flex-col gap-y-2 items-center justify-center py-3">
+							<p className="text-xs font-medium text-gray-500">
+								<span className="text-sm">© </span>
+								2024 COLORS AI
+							</p>
 							<Link
 								isExternal
 								className="flex items-center gap-1 text-current"
 								href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
 								title="nextui.org homepage"
 							>
-								<span className="text-default-600">Built by</span>
+								<span className="text-gray-500">Built by</span>
 								<p className="text-primary">Caceres</p>
 							</Link>
 						</footer>
