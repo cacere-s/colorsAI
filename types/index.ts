@@ -4,6 +4,12 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
 };
 
+export type Palettes = ColorPalettes[]
+interface ColorPalettes {
+  id: number
+  colors: string[]
+}
+
 export type Colors = ColorCss[]
 
 export interface ColorCss {
