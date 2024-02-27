@@ -33,12 +33,19 @@ export const palettes: Palettes = [
 		id: 8,
 		colors: ["#D4AFB9", "#D1CFE2", "#9CADCE", "#7EC4CF", "#52B2CF"],
 	},
-	// {
-	// 	id: 9,
-	// 	colors: ["#809CCC", "#97B7D0", "#BAE0D3", "#D9EBDF", "#ECC5D8"],
-	// },
-	// {
-	// 	id: 9,
-	// 	colors: ["#809CCC", "#97B7D0", "#BAE0D3", "#D9EBDF", "#ECC5D8"],
-	// },
+	{
+		id: 9,
+		colors: ["#E99E75", "#44426E", "#776483", "#BBAAB8", "#292643"],
+	},
+	{
+		id: 10,
+		colors: ["#2D4B8A", "#3C6EC6", "#FFC100", "#FE6603", "#03A5A5"],
+	},
+
+
+	// upcoming
+	{
+		id: 0,
+		colors: ["#556", "#554", "#553", "#552", "#551"],
+	},
 ];

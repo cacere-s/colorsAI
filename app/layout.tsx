@@ -10,7 +10,7 @@ import { Providers } from "./providers";
 
 export const metadata: Metadata = {
 	title: {
-		default: siteConfig.name,
+		default: `${siteConfig.name} - ${siteConfig.description}`,
 		template: `%s - ${siteConfig.name}`,
 	},
 	description: siteConfig.description,
@@ -42,7 +42,7 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "white" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
-						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+						<main className="container mx-auto max-w-5xl pt-16 px-6 flex-grow">
 							{children}
 						</main>
 						<Divider className="my-4" />

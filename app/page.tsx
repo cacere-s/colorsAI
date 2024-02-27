@@ -1,51 +1,64 @@
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code"
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+"use client";
+import { CardSection } from "@/components/CardSection";
+import { NavigationSection } from "@/components/NavigationSection";
+import { subtitle, title } from "@/components/primitives";
+import { Button, Tooltip } from "@nextui-org/react";
+import { useState } from "react";
 
 export default function Home() {
+	const writeText = async (item: string): Promise<void> =>
+		await navigator.clipboard.writeText(item);
+
+	const [color, setColor] = useState({
+		colors: ["#F0B67F", "#FE5F55", "#D6D1B1", "#C7EFCF", "#EEF5DB"],
+	});
+
 	return (
 		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
 			<div className="inline-block max-w-lg text-center justify-center">
-				<h1 className={title()}>Make&nbsp;</h1>
-				<h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
-				<br />
-				<h1 className={title()}>
-					websites regardless of your design experience.
-				</h1>
+				<h1 className={title()}>Color palette generator for&nbsp;</h1>
+				<h1 className={title({ color: "violet" })}>UI&nbsp;</h1>
+				<h1 className={title()}>with AI</h1>
 				<h2 className={subtitle({ class: "mt-4" })}>
 					Beautiful, fast and modern React UI library.
 				</h2>
 			</div>
 
-			<div className="flex gap-3">
-				<Link
-					isExternal
-					href={siteConfig.links.docs}
-					className={buttonStyles({ color: "primary", radius: "full", variant: "shadow" })}
-				>
-					Documentation
-				</Link>
-				<Link
-					isExternal
-					className={buttonStyles({ variant: "bordered", radius: "full" })}
-					href={siteConfig.links.github}
-				>
-					<GithubIcon size={20} />
-					GitHub
-				</Link>
+			<div className="flex flex-col sm:flex-row justify-center sm:justify-between w-full items-center gap-y-3">
+				<div className="flex">
+					{color.colors.map((color) => (
+						<div key={color}>
+							<Tooltip
+								content={
+									<div className="flex uppercase items-center gap-x-2">
+										<div
+											className="h-4 w-4 rounded-sm border-2"
+											style={{ backgroundColor: color }}
+										/>
+										{color}
+									</div>
+								}
+							>
+								{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+								<div
+									className="h-14 w-8 sm:h-20 sm:w-14 m-0.5 rounded-lg border-2 border-neutral-500 dark:border-neutral-200 cursor-copy"
+									style={{ backgroundColor: color }}
+									onClick={() => writeText(color)}
+								/>
+							</Tooltip>
+						</div>
+					))}
+				</div>
+
+				<Button color="secondary" className="text-base">
+					Generate palette
+				</Button>
 			</div>
 
-			<div className="mt-8">
-				<Snippet hideSymbol hideCopyButton variant="flat">
-					<span>
-						Get started by editing <Code color="primary">app/page.tsx</Code>
-					</span>
-				</Snippet>
-			</div>
+			<section className="w-full">
+				<CardSection color={color.colors[0]} />
+				<NavigationSection color={color.colors[1]} />
+			</section>
 		</section>
 	);
 }
