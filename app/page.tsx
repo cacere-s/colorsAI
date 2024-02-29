@@ -1,17 +1,18 @@
 "use client";
+import { BannerSection } from "@/components/BannerSection";
 import { CardSection } from "@/components/CardSection";
 import { NavigationSection } from "@/components/NavigationSection";
+import { OthersSection } from "@/components/OthersSection";
+import { UiSection } from "@/components/UiSection";
 import { subtitle, title } from "@/components/primitives";
+import { useColorContext } from "@/hooks/useColorContext";
 import { Button, Tooltip } from "@nextui-org/react";
-import { useState } from "react";
 
 export default function Home() {
+	const color = useColorContext()
+
 	const writeText = async (item: string): Promise<void> =>
 		await navigator.clipboard.writeText(item);
-
-	const [color, setColor] = useState({
-		colors: ["#F0B67F", "#FE5F55", "#D6D1B1", "#C7EFCF", "#EEF5DB"],
-	});
 
 	return (
 		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -20,13 +21,13 @@ export default function Home() {
 				<h1 className={title({ color: "violet" })}>UI&nbsp;</h1>
 				<h1 className={title()}>with AI</h1>
 				<h2 className={subtitle({ class: "mt-4" })}>
-					Beautiful, fast and modern React UI library.
+					Color is a matter of taste and sensitivity.
 				</h2>
 			</div>
 
 			<div className="flex flex-col sm:flex-row justify-center sm:justify-between w-full items-center gap-y-3">
 				<div className="flex">
-					{color.colors.map((color) => (
+					{color.colors?.map((color) => (
 						<div key={color}>
 							<Tooltip
 								content={
@@ -56,8 +57,11 @@ export default function Home() {
 			</div>
 
 			<section className="w-full">
-				<CardSection color={color.colors[0]} />
-				<NavigationSection color={color.colors[1]} />
+				{color.colors && <CardSection color={color.colors[0]} />}
+				{color.colors && <NavigationSection color={color.colors[1]} />}
+				{color.colors && <BannerSection color={color.colors[2]} />}
+				{color.colors && <UiSection color={color.colors[3]} />}
+				{color.colors && <OthersSection color={color.colors[4]} />}
 			</section>
 		</section>
 	);

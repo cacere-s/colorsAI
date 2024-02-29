@@ -12,7 +12,7 @@ export function CardTweet({ color }: { color: string }) {
 	const [isFollowed, setIsFollowed] = React.useState(false);
 
 	return (
-		<section className="w-full flex justify-start">
+		<section className="w-full flex justify-center sm:justify-start">
 			<Card className="max-w-[340px] h-56">
 			<CardHeader className="justify-between">
 				<div className="flex gap-5">

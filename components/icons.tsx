@@ -139,3 +139,150 @@ export const SunFilledIcon = ({
 	</svg>
 );
 
+export const ChevronIcon = (props: IconSvgProps) => (
+	<svg
+		aria-hidden="true"
+		fill="none"
+		focusable="false"
+		height="1em"
+		viewBox="0 0 24 24"
+		width="1em"
+		{...props}
+	>
+		<path
+			d="M15.5 19l-7-7 7-7"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="1.5"
+		/>
+	</svg>
+);
+
+export const AlertIcon = ({
+	size = 24,
+	width,
+	height,
+	...props
+}: IconSvgProps) => (
+	<svg
+		aria-hidden="true"
+		focusable="false"
+		fill="none"
+		height={size || height}
+		viewBox="0 0 512 512"
+		width={size || width}
+		{...props}
+	>
+		<path
+			fill="currentColor"
+			d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+		/>
+	</svg>
+);
+
+export const CloseIcon = ({
+	size = 24,
+	width,
+	height,
+	...props
+}: IconSvgProps) => (
+	<svg
+		aria-hidden="true"
+		focusable="false"
+		height={size || height}
+		width={size || width}
+		{...props}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className="lucide lucide-x"
+	>
+		<path d="M18 6 6 18" />
+		<path d="m6 6 12 12" />
+	</svg>
+);
+
+export const ProgressIcon = ({
+	size = 24,
+	width,
+	height,
+	...props
+}: IconSvgProps) => (
+	<svg
+		aria-hidden="true"
+		focusable="false"
+		height={size || height}
+		width={size || width}
+		{...props}
+		fill="none"
+		viewBox="0 0 512 512"
+	>
+		<path
+			fill="currentColor"
+			d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"
+		/>
+	</svg>
+);
+
+export const ProgressDashedIcon = ({
+	size = 24,
+	width,
+	height,
+	...props
+}: IconSvgProps) => (
+	<svg
+		aria-hidden="true"
+		focusable="false"
+		height={size || height}
+		width={size || width}
+		{...props}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2.5"
+	>
+		<path d="M10.1 2.182a10 10 0 0 1 3.8 0" />
+		<path d="M13.9 21.818a10 10 0 0 1-3.8 0" />
+		<path d="M17.609 3.721a10 10 0 0 1 2.69 2.7" />
+		<path d="M2.182 13.9a10 10 0 0 1 0-3.8" />
+		<path d="M20.279 17.609a10 10 0 0 1-2.7 2.69" />
+		<path d="M21.818 10.1a10 10 0 0 1 0 3.8" />
+		<path d="M3.721 6.391a10 10 0 0 1 2.7-2.69" />
+		<path d="M6.391 20.279a10 10 0 0 1-2.69-2.7" />
+	</svg>
+);
+
+export const ProgressCircleIcon = ({
+	size = 24,
+	width,
+	height,
+	...props
+}: IconSvgProps) => (
+	<svg
+		aria-hidden="true"
+		focusable="false"
+		height={size || height}
+		width={size || width}
+		{...props}
+		fill="none"
+		viewBox="0 0 24 24"
+	>
+		<circle
+			className="opacity-25"
+			cx="12"
+			cy="12"
+			r="10"
+			stroke="currentColor"
+			strokeWidth="4"
+		/>
+		<path
+			className="opacity-75"
+			fill="currentColor"
+			d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+		/>
+	</svg>
+);
