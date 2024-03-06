@@ -22,7 +22,7 @@ export function InputComponent({ color }: { color: string }) {
 							Password
 						</label>
 						<input
-							className="shadow-sm rounded-md w-full px-3 py-2 border border-yellow-300 focus:outline-none "
+							className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none "
 							placeholder="Enter your password"
 							style={{ border: `2px solid ${color}5F` }}
 							disabled

@@ -6,13 +6,27 @@ import { OthersSection } from "@/components/OthersSection";
 import { UiSection } from "@/components/UiSection";
 import { subtitle, title } from "@/components/primitives";
 import { useColorContext } from "@/hooks/useColorContext";
-import { Button, Tooltip } from "@nextui-org/react";
+import { Button, Spinner, Tooltip } from "@nextui-org/react";
+import clsx from "clsx";
+import { useState } from "react";
 
 export default function Home() {
-	const color = useColorContext()
+	const color = useColorContext();
+	const [progress, setProgress] = useState(false);
 
-	const writeText = async (item: string): Promise<void> =>
-		await navigator.clipboard.writeText(item);
+	const colorAI = () => {
+		setProgress(true)
+		fetch("https://api-colorsai.vercel.app/")
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.error) return colorAI();
+				if (!data.error) return color.setColor({ colors: data.colors });
+			}).finally(() => {
+				setProgress(false)
+			})
+	};
+
+	const writeText = (item: string) => navigator.clipboard.writeText(item);
 
 	return (
 		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -51,8 +65,16 @@ export default function Home() {
 					))}
 				</div>
 
-				<Button color="secondary" className="text-base">
-					Generate palette
+				<Button
+					onClick={() => colorAI()}
+					isDisabled={progress}
+					color="secondary"
+					className={clsx(
+						"text-base w-[10rem]",
+						progress ? "bg-slate-200 border-2 border-violet-400" : "",
+					)}
+				>
+					{progress ? <Spinner color="secondary" /> : "Generate palette"}
 				</Button>
 			</div>
 

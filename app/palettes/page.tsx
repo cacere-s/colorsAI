@@ -1,9 +1,12 @@
+'use client'
 import { subtitle, title } from "@/components/primitives";
 import { Tooltip } from "@nextui-org/react";
 import clsx from "clsx";
 import { palettes } from "./palettes";
 
 export default function PalettesPage() {
+	const writeText = (item: string) => navigator.clipboard.writeText(item);
+
 	return (
 		<main className="flex flex-col items-center justify-center">
 			<section className="inline-block max-w-lg text-center justify-center">
@@ -49,12 +52,16 @@ export default function PalettesPage() {
 										</div>
 									}
 								>
+									{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 									<div
 										className={clsx(
-											"h-16 w-8 m-0.5 rounded-full border-2 border-neutral-500 dark:border-neutral-200 cursor-copy",
-											item.id === 0 ? "rounded-2xl opacity-40 border-none cursor-auto" : "",
+											"h-16 w-8 m-0.5 rounded-full border-2 border-neutral-500 dark:border-neutral-200 hover:cursor-copy",
+											item.id === 0
+												? "rounded-2xl opacity-40 border-none hover:cursor-auto"
+												: "",
 										)}
 										style={{ backgroundColor: hexa }}
+										onClick={item.id !== 0 ? () => writeText(hexa) : () => {return}}
 									/>
 								</Tooltip>
 							</div>

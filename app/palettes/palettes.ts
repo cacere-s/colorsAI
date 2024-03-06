@@ -37,7 +37,22 @@ export const palettes: Palettes = [
 		id: 9,
 		colors: ["#2D4B8A", "#3C6EC6", "#FFC100", "#FE6603", "#03A5A5"],
 	},
-
+	{
+		id: 10,
+		colors: ["#D9E4E8", "#A2CFBB", "#90B3B9", "#68A6C3", "#4080B5"],
+	},
+	{
+		id: 11,
+		colors: ["#B1B1B1", "#D8D8D8", "#F2F2F2", "#FFF5F8", "#AAD1EC"],
+	},
+	{
+		id: 12,
+		colors: ["#D3F9E8", "#B4EFD1", "#90E4C8", "#65D9B4", "#44B38D"],
+	},
+	{
+		id: 13,
+		colors: ["#D9E4EF", "#A7C0DD", "#67A8CF", "#3383A8", "#22767A"],
+	},
 
 	// upcoming
 	{
