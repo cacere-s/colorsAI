@@ -16,7 +16,7 @@ export default function Home() {
 
 	const colorAI = () => {
 		setProgress(true)
-		fetch("https://api-colorsai.vercel.app/")
+		fetch(`${process.env.NEXT_PUBLIC_API}`)
 			.then((response) => response.json())
 			.then((data) => {
 				if (data.error) return colorAI();
