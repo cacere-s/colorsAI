@@ -92,7 +92,7 @@ export const Navbar = () => {
 							: ""
 						)}
 						>
-							<Link color={"foreground"} href={item.href} size="lg">
+							<Link className="block" color={"foreground"} href={item.href} size="lg">
 								{item.label}
 							</Link>
 						</NavbarMenuItem>
