@@ -32,7 +32,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning className="white">
-			<head />
+			<head>
+				<meta
+					property="og:image"
+					content="https://res.cloudinary.com/dgaj83nvk/image/upload/v1710008888/cacere-s/project/clupl8uk8vol348ncbgs.png"
+				/>
+			</head>
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased",
